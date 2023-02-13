@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import {MONGO_URL,DB_NAME} from './index.js'
-const connectToDb = () => {
+const connectToDb = async () => {
   mongoose.set('strictQuery', true);
   mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
