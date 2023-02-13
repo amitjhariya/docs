@@ -12,8 +12,11 @@ app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
 app.use("/", Router)
-app.listen(PORT, () => {
-  console.log(`Server is Up and Running at Port : ${PORT}`);
-});
 
-export default app
+connectToDb().then(()=>{
+  app.listen(PORT, () => {
+    console.log(`Server is Up and Running at Port : ${PORT}`);
+  });
+})
+
+
